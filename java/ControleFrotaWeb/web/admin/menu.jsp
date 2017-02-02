@@ -32,8 +32,8 @@
                     <div class="dropdown">
                         <div class="dd-inner">
                             <ul class="column">
-                                <li><a href="cadastrousuario.jsp">Cadastrar novo funcionário</a></li>
-                                <li><a href="#">Alterar funcionário existente</a></li>
+                                <li><a href="cadastrousuario">Cadastrar novo funcionário</a></li>
+                                <li><a href="alteracaousuario">Alterar funcionário existente</a></li>
                                 <li><a href="#">Excluir funcionário</a></li>
                             </ul>
                             <ul class="column">

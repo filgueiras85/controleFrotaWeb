@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author ssdorneles
  */
-public class ServletCadastroUsuario extends HttpServlet {
+public class ServletAlteracaoDadosUsuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +37,10 @@ public class ServletCadastroUsuario extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ServletCadastroUsuario</title>");
+            out.println("<title>Servlet ServletAlteracaoDadosUsuario</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ServletCadastroUsuario at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ServletAlteracaoDadosUsuario at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -67,7 +67,7 @@ public class ServletCadastroUsuario extends HttpServlet {
             out.print("Nenhum usuário autenticado!<br/>");
             out.print("<a href='../login.jsp'>Voltar para login</a>");
         } else {
-            response.sendRedirect("cadastrousuario.jsp");
+            response.sendRedirect("alteracaodadosusuario.jsp");
         }
     }
 
@@ -99,7 +99,7 @@ public class ServletCadastroUsuario extends HttpServlet {
 
         try {
             UsuarioController usuarioController = new UsuarioController();
-            String resultado = usuarioController.salvaUsuario(nome, sobrenome, funcao, telefone, email, username, senha, dataNascimentoCorrigida, observacao);
+            String resultado = usuarioController.atualizaUsuario(nome, sobrenome, funcao, telefone, email, username, senha, dataNascimentoCorrigida, observacao);
             out.println("<script type=\"text/javascript\">");
             out.println("alert('" + resultado + "');");
             out.println("location='menu.jsp';");

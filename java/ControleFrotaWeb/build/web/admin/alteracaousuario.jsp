@@ -1,9 +1,11 @@
 <%-- 
-    Document   : cadastrousuario
-    Created on : Jan 31, 2017, 10:12:24 PM
+    Document   : alteracaousuario
+    Created on : Feb 1, 2017, 10:41:02 PM
     Author     : ssdorneles
 --%>
 
+<%@page import="Modelo.Usuario"%>
+<%@page import="Controller.UsuarioController"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.Funcao"%>
 <%@page import="java.util.List"%>
@@ -17,6 +19,13 @@
         <title>Controle de Frotas</title>
         <link href="util/ddmenu/ddmenu.css" rel="stylesheet" type="text/css"/>
         <script src="util/ddmenu/ddmenu.js" type="text/javascript"></script>
+        <script language='javascript' type='text/javascript'>
+            function carregaDados(input) {
+
+                document.getElementsById('nomex').value = 'abc';
+
+            }
+        </script>
     </head>
     <body>
         <h1 style="text-align:center">Controle de Frotas</h1>
@@ -115,132 +124,44 @@
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
-        <div style="background-color:#eeeeee; background-position:initial initial; background-repeat:initial initial; border:1px solid #cccccc; padding:5px 10px; text-align:center">Cadastre um novo usu&aacute;rio</div>
+        <div style="background-color:#eeeeee; background-position:initial initial; background-repeat:initial initial; border:1px solid #cccccc; padding:5px 10px; text-align:center">Altere os dados de um usu&aacute;rio</div>
 
+
+        <%
+            UsuarioController usuarioController = new UsuarioController();
+            List usuarios = usuarioController.listaTodosUsuariosAtivos();
+            ArrayList usernamesArray = new ArrayList();
+            for (Object o : usuarios) {
+                Usuario f = (Usuario) o;
+                usernamesArray.add(f.getUsuario());
+            }
+
+            pageContext.setAttribute("usernamesArray", usernamesArray);
+        %>
 
         <br>
 
-        <form action="cadastrousuario" method="post">
-            <table align="center">
+        <form action="alteracaousuario" method="post">
+
+            <table align="center" style="border-spacing: 35px 2px">
                 <tbody>
                     <tr>
-                        <td>Nome</td>
-                        <td>Sobrenome</td>
-                    </tr>
-                    <tr>
-                        <td><input maxlength="100" name="nome" required="required" size="20" type="text"/></td>
-                        <td><input maxlength="200" name="sobrenome" required="required" size="40" type="text" /></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-
-            <table align="center">
-                <tbody>
-                    <tr>
-                        <td>Escolha o nome de usu&aacute;rio</td>
-                    </tr>
-                    <tr>
-                        <td><input maxlength="100" name="username" required="required" size="62" type="text" /></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-
-            <table align="center">
-                <tbody>
-                    <tr>
-                        <td>Crie uma senha</td>
-                    </tr>
-                    <tr>
-                        <td><input maxlength="100" name="senha" required="required" size="62" type="password"  oninput="document.getElementById('confirmasenha').pattern = this.value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')"></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-
-            <table align="center">
-                <tbody>
-                    <tr>
-                        <td>Confirme a senha</td>
-                    </tr>
-                    <tr>
-                        <td><input maxlength="100" size="62" type="password" id="confirmasenha" name="confirmasenha" pattern="" title="Senhas devem ser iguais"></td>
+                        <td>Qual usuário deseja alterar?</td>
+                        <td><select id="dropdownUsername" name="username">
+                                <c:forEach items="${usernamesArray}" var="current">
+                                    <option><c:out value="${current}"/></option>
+                                </c:forEach>
+                            </select>
                         </td>
                     </tr>
                 </tbody>
             </table>
 
-            <br>
-
-            <table align="center" style="border-spacing: 35px 2px">
-                <tbody>
-                    <tr>
-                        <td>Data de Nascimento</td>
-                        <td>Telefone</td>
-                    </tr>
-                    <tr>
-                        <td><input maxlength="10" name="datanascimento" required="required" size="20" type="date" /></td>
-                        <td><input maxlength="200" name="telefone" size="34" type="tel" placeholder="(xx)xxxxx-xxxx"/></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-
-
-            <%
-                FuncaoController funcaoController = new FuncaoController();
-                List funcoes = funcaoController.listaTodasFuncoes();
-                ArrayList funcoesArray = new ArrayList();
-                for (Object o : funcoes) {
-                    Funcao f = (Funcao) o;
-                    funcoesArray.add(f.getTxtFuncao());
-                }
-
-                pageContext.setAttribute("funcoesArray", funcoesArray);
-            %>
-
-
-            <table align="center" style="border-spacing: 35px 2px">
-                <tbody>
-                    <tr>
-                        <td>Fun&ccedil;&atilde;o</td>
-                        <td>email</td>
-                    </tr>
-                    <tr>
-
-                        <td><select id="dropdown" name="funcao">
-                                <c:forEach items="${funcoesArray}" var="current">
-                                    <option><c:out value="${current}"/></option>
-                                </c:forEach>
-                            </select></td>
-                        <td><input maxlength="200" name="email" size="43" type="email" /></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
-
-            <table align="center">
-                <tbody>
-                    <tr>
-                        <td>Observa&ccedil;&atilde;o</td>
-                    </tr>
-                    <tr>
-                        <td><textarea cols="62" rows="10" name="observacao" ></textarea></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <br>
+            
 
 
 
-            <p style="text-align:center"><input type="submit" value="Cadastrar Usuário" /></p>
+            <p style="text-align:center"><input type="submit" value="Alterar dados" /></p>
         </form>
     </body>
 </html>

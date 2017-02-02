@@ -32,7 +32,7 @@ public class UsuarioController {
         List usuarios = usuarioDAO.recuperarTodosUsuarios();
         return usuarios;
     }
-    
+
     public List listaTodosUsuariosAtivos() {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         List usuarios = usuarioDAO.recuperarTodosUsuariosAtivos();
@@ -73,6 +73,27 @@ public class UsuarioController {
     public String demiteUsuario(String username) {
         Usuario usuario = this.listaUnicoUsuario(username);
         usuario.setDataDemissao(new java.sql.Timestamp(new Date().getTime()));
+        String resultado = new UsuarioDAO().atualizarUsuario(usuario);
+        return resultado;
+    }
+
+    public String atualizaUsuario(String nome, String sobrenome, String funcao,
+            String telefone, String email, String username,
+            String senha, String dataNascimento, String observacao) {
+        int funcaoInt = new FuncaoController().listaFuncaoId(funcao);
+        Usuario usuario = this.listaUnicoUsuario(username);
+        try {
+            usuario.setDataNascimento(new java.sql.Timestamp(new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento).getTime()));
+            usuario.setEmail(email);
+            usuario.setIdFuncao(funcaoInt);
+            usuario.setNome(nome);
+            usuario.setObservacao(observacao);
+            usuario.setSenha(senha);
+            usuario.setSobrenome(sobrenome);
+            usuario.setTelefone(telefone);
+        } catch (ParseException ex) {
+            Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         String resultado = new UsuarioDAO().atualizarUsuario(usuario);
         return resultado;
     }

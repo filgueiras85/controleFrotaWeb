@@ -46,6 +46,7 @@ public class ServletLogin extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
+        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         HttpSession sessao = request.getSession();
         String usuario = (String) sessao.getAttribute("jUsuario");
@@ -69,6 +70,7 @@ public class ServletLogin extends HttpServlet {
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
+        request.setCharacterEncoding("UTF-8");
 
         String user = request.getParameter("usuario");
         String pwd = request.getParameter("senha");

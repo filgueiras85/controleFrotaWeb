@@ -1,14 +1,16 @@
 <%-- 
-    Document   : cadastrousuario
-    Created on : Jan 31, 2017, 10:12:24 PM
+    Document   : alteracaodadosusuario
+    Created on : Feb 1, 2017, 11:55:36 PM
     Author     : ssdorneles
 --%>
 
+<%@page import="Modelo.Usuario"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.Funcao"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Controller.FuncaoController" %>
+<%@page language="java" import="java.util.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -115,12 +117,20 @@
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
-        <div style="background-color:#eeeeee; background-position:initial initial; background-repeat:initial initial; border:1px solid #cccccc; padding:5px 10px; text-align:center">Cadastre um novo usu&aacute;rio</div>
+        <div style="background-color:#eeeeee; background-position:initial initial; background-repeat:initial initial; border:1px solid #cccccc; padding:5px 10px; text-align:center">Altere os dados do usu&aacute;rio</div>
 
 
+        <% Usuario usuario = (Usuario) request.getAttribute("usuario");
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(usuario.getDataNascimento());
+            int dia = cal.get(Calendar.DAY_OF_MONTH);
+            int mes = cal.get(Calendar.MONTH);
+            int ano = cal.get(Calendar.YEAR);
+            String dataCorrigida = ano + "-" + mes + "-" + dia;
+        %>
         <br>
 
-        <form action="cadastrousuario" method="post">
+        <form action="alteracaodadosusuario" method="post">
             <table align="center">
                 <tbody>
                     <tr>
@@ -128,8 +138,8 @@
                         <td>Sobrenome</td>
                     </tr>
                     <tr>
-                        <td><input maxlength="100" name="nome" required="required" size="20" type="text"/></td>
-                        <td><input maxlength="200" name="sobrenome" required="required" size="40" type="text" /></td>
+                        <td><input maxlength="100" name="nome" required="required" size="20" type="text" value="<%=usuario.getNome()%>"/></td>
+                        <td><input maxlength="200" name="sobrenome" required="required" size="40" type="text" value="<%=usuario.getSobrenome()%>"/></td>
                     </tr>
                 </tbody>
             </table>
@@ -139,10 +149,10 @@
             <table align="center">
                 <tbody>
                     <tr>
-                        <td>Escolha o nome de usu&aacute;rio</td>
+                        <td>Nome de Usuário (não pode ser alterado)</td>
                     </tr>
                     <tr>
-                        <td><input maxlength="100" name="username" required="required" size="62" type="text" /></td>
+                        <td><input maxlength="100" name="username" required="required" size="62" type="text" value="<%=usuario.getUsuario()%>" readonly/></td>
                     </tr>
                 </tbody>
             </table>
@@ -155,7 +165,7 @@
                         <td>Crie uma senha</td>
                     </tr>
                     <tr>
-                        <td><input maxlength="100" name="senha" required="required" size="62" type="password"  oninput="document.getElementById('confirmasenha').pattern = this.value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')"></td>
+                        <td><input maxlength="100" name="senha" required="required" size="62" type="password" oninput="document.getElementById('confirmasenha').pattern = this.value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')"></td>
                     </tr>
                 </tbody>
             </table>
@@ -183,8 +193,8 @@
                         <td>Telefone</td>
                     </tr>
                     <tr>
-                        <td><input maxlength="10" name="datanascimento" required="required" size="20" type="date" /></td>
-                        <td><input maxlength="200" name="telefone" size="34" type="tel" placeholder="(xx)xxxxx-xxxx"/></td>
+                        <td><input maxlength="10" name="datanascimento" required="required" size="20" type="date"/></td>
+                        <td><input maxlength="200" name="telefone" size="34" type="tel" value="<%=usuario.getTelefone()%>"/></td>
                     </tr>
                 </tbody>
             </table>
@@ -213,12 +223,12 @@
                     </tr>
                     <tr>
 
-                        <td><select id="dropdown" name="funcao">
+                        <td><select id="dropdown" name="funcao"> 
                                 <c:forEach items="${funcoesArray}" var="current">
                                     <option><c:out value="${current}"/></option>
                                 </c:forEach>
                             </select></td>
-                        <td><input maxlength="200" name="email" size="43" type="email" /></td>
+                        <td><input maxlength="200" name="email" size="43" type="email" value="<%=usuario.getEmail()%>"/></td>
                     </tr>
                 </tbody>
             </table>
@@ -231,7 +241,7 @@
                         <td>Observa&ccedil;&atilde;o</td>
                     </tr>
                     <tr>
-                        <td><textarea cols="62" rows="10" name="observacao" ></textarea></td>
+                        <td><textarea cols="62" rows="10" name="observacao" ><%=usuario.getObservacao()%></textarea></td>
                     </tr>
                 </tbody>
             </table>
@@ -240,7 +250,7 @@
 
 
 
-            <p style="text-align:center"><input type="submit" value="Cadastrar Usuário" /></p>
+            <p style="text-align:center"><input type="submit" value="Salvar alterações" /></p>
         </form>
     </body>
 </html>

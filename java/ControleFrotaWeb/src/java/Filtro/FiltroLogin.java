@@ -88,7 +88,7 @@ public class FiltroLogin implements Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession();
         if (session.getAttribute("jUsuario") == null) {
-            ((HttpServletResponse) response).sendRedirect("login.jsp");
+            ((HttpServletResponse) response).sendRedirect("../login");
         } else {
             chain.doFilter(request, response);
         }

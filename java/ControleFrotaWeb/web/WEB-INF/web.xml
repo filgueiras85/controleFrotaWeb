@@ -20,6 +20,14 @@
         <servlet-name>ServletCadastroUsuario</servlet-name>
         <servlet-class>servlet.ServletCadastroUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletAlteracaoUsuario</servlet-name>
+        <servlet-class>servlet.ServletAlteracaoUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletAlteracaoDadosUsuario</servlet-name>
+        <servlet-class>servlet.ServletAlteracaoDadosUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletLogin</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -27,6 +35,14 @@
     <servlet-mapping>
         <servlet-name>ServletCadastroUsuario</servlet-name>
         <url-pattern>/admin/cadastrousuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAlteracaoUsuario</servlet-name>
+        <url-pattern>/admin/alteracaousuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAlteracaoDadosUsuario</servlet-name>
+        <url-pattern>/admin/alteracaodadosusuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

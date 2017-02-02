@@ -6,8 +6,10 @@
 package servlet;
 
 import Controller.UsuarioController;
+import Modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author ssdorneles
  */
-public class ServletCadastroUsuario extends HttpServlet {
+public class ServletAlteracaoUsuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,10 @@ public class ServletCadastroUsuario extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ServletCadastroUsuario</title>");
+            out.println("<title>Servlet ServletAlteracaoUsuario</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ServletCadastroUsuario at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ServletAlteracaoUsuario at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -67,7 +69,7 @@ public class ServletCadastroUsuario extends HttpServlet {
             out.print("Nenhum usuário autenticado!<br/>");
             out.print("<a href='../login.jsp'>Voltar para login</a>");
         } else {
-            response.sendRedirect("cadastrousuario.jsp");
+            response.sendRedirect("alteracaousuario.jsp");
         }
     }
 
@@ -82,32 +84,12 @@ public class ServletCadastroUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        response.setContentType("text/html");
         request.setCharacterEncoding("UTF-8");
-        String nome, sobrenome, username, senha, datanascimento, telefone, email, funcao, observacao;
-        nome = request.getParameter("nome");
-        sobrenome = request.getParameter("sobrenome");
-        username = request.getParameter("username");
-        senha = request.getParameter("senha");
-        datanascimento = request.getParameter("datanascimento");
-        String dataNascimentoCorrigida = datanascimento.substring(8) + "/" + datanascimento.substring(5, 7) + "/" + datanascimento.substring(0, 4);
-        telefone = request.getParameter("telefone");
-        email = request.getParameter("email");
-        funcao = request.getParameter("funcao");
-        observacao = request.getParameter("observacao");
-
-        try {
-            UsuarioController usuarioController = new UsuarioController();
-            String resultado = usuarioController.salvaUsuario(nome, sobrenome, funcao, telefone, email, username, senha, dataNascimentoCorrigida, observacao);
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('" + resultado + "');");
-            out.println("location='menu.jsp';");
-            out.println("</script>");
-
-        } catch (Exception e) {
-            out.print(e.getMessage());
-        }
+        UsuarioController usuarioController = new UsuarioController();
+        Usuario usuario = usuarioController.listaUnicoUsuario(request.getParameter("username"));
+        request.setAttribute("usuario",usuario);
+        RequestDispatcher rd = request.getRequestDispatcher("/admin/alteracaodadosusuario.jsp");
+        rd.forward(request, response);
     }
 
     /**

@@ -37,8 +37,8 @@
                     <div class="dropdown">
                         <div class="dd-inner">
                             <ul class="column">
-                                <li><a href="cadastrousuario.jsp">Cadastrar novo funcionário</a></li>
-                                <li><a href="#">Alterar funcionário existente</a></li>
+                                <li><a href="cadastrousuario">Cadastrar novo funcionário</a></li>
+                                <li><a href="alteracaousuario">Alterar funcionário existente</a></li>
                                 <li><a href="#">Excluir funcionário</a></li>
                             </ul>
                             <ul class="column">
@@ -155,7 +155,7 @@
                         <td>Crie uma senha</td>
                     </tr>
                     <tr>
-                        <td><input maxlength="100" name="senha" required="required" size="62" type="password" /></td>
+                        <td><input maxlength="100" name="senha" required="required" size="62" type="password"  oninput="document.getElementById('confirmasenha').pattern = this.value.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&')"></td>
                     </tr>
                 </tbody>
             </table>
@@ -168,17 +168,8 @@
                         <td>Confirme a senha</td>
                     </tr>
                     <tr>
-                        <td><input maxlength="100" name="confirmasenha" required="required" size="62" type="password" oninput="check(this)"/>
-                            <script language='javascript' type='text/javascript'>
-                                function check(input) {
-                                    if (input.value.equals(document.getElementsByName('senha').value)) {
-                                        input.setCustomValidity('Senhas devem ser iguais.');
-                                    } else {
-                                        // input is valid -- reset the error message
-                                        input.setCustomValidity('');
-                                    }
-                                }
-                            </script></td>
+                        <td><input maxlength="100" size="62" type="password" id="confirmasenha" name="confirmasenha" pattern="" title="Senhas devem ser iguais"></td>
+                        </td>
                     </tr>
                 </tbody>
             </table>
