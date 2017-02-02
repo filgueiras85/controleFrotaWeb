@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opns="http://www.omnigroup.com/namespace/OmniPlan/v2" id="bhCmQ2ikGAd">
+  <start-date>2017-01-26T10:00:00.000Z</start-date>
+  <prototype-task>
+    <task id="t-2">
+      <title>Task 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-3">
+      <title>Milestone 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t-4">
+      <title>Group 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r-2">
+      <name>Resource 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-3">
+      <name>Equipment 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-4">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r-5">
+      <name>Group 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <type>Group</type>
+    <schedule>
+      <schedule-day day-of-week="sunday">
+        <time-span start-time="28800" end-time="43200"/>
+        <time-span start-time="46800" end-time="61200"/>
+      </schedule-day>
+      <schedule-day day-of-week="monday">
+        <time-span start-time="28800" end-time="43200"/>
+        <time-span start-time="46800" end-time="61200"/>
+      </schedule-day>
+      <schedule-day day-of-week="tuesday">
+        <time-span start-time="28800" end-time="43200"/>
+        <time-span start-time="46800" end-time="61200"/>
+      </schedule-day>
+      <schedule-day day-of-week="wednesday">
+        <time-span start-time="28800" end-time="43200"/>
+        <time-span start-time="46800" end-time="61200"/>
+      </schedule-day>
+      <schedule-day day-of-week="thursday">
+        <time-span start-time="28800" end-time="43200"/>
+        <time-span start-time="46800" end-time="61200"/>
+      </schedule-day>
+      <schedule-day day-of-week="friday">
+        <time-span start-time="28800" end-time="43200"/>
+        <time-span start-time="46800" end-time="61200"/>
+      </schedule-day>
+      <schedule-day day-of-week="saturday">
+        <time-span start-time="28800" end-time="43200"/>
+        <time-span start-time="46800" end-time="61200"/>
+      </schedule-day>
+      <calendar name="Time Off" editable="yes" overtime="no"/>
+      <calendar name="Overtime" editable="yes" overtime="yes"/>
+    </schedule>
+    <child-resource idref="r1"/>
+  </resource>
+  <resource id="r1">
+    <name>Resource 1</name>
+    <type>Staff</type>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t2"/>
+    <child-task idref="t7"/>
+    <child-task idref="t12"/>
+    <child-task idref="t13"/>
+    <child-task idref="t8"/>
+    <child-task idref="t10"/>
+    <child-task idref="t14"/>
+    <child-task idref="t15"/>
+    <child-task idref="t11"/>
+  </task>
+  <task id="t2">
+    <title>Modelagem</title>
+    <type>group</type>
+    <start-constraint-date>2017-01-26T10:30:00.000Z</start-constraint-date>
+    <child-task idref="t3"/>
+    <child-task idref="t4"/>
+    <start-no-earlier-than>2017-01-26T10:30:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t3">
+    <title>Diagrama de Classes</title>
+    <effort>10800</effort>
+    <effort-done>10800</effort-done>
+  </task>
+  <task id="t4">
+    <title>Diagrama ER</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t3"/>
+  </task>
+  <task id="t7">
+    <title>Banco de dados</title>
+    <type>group</type>
+    <child-task idref="t17"/>
+    <child-task idref="t18"/>
+    <style>
+      <value key="font-italic">yes</value>
+    </style>
+  </task>
+  <task id="t8">
+    <title>Classes de Controle e DAO</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t13"/>
+  </task>
+  <task id="t10">
+    <title>Módulo 1 - Gerencia</title>
+    <type>group</type>
+    <child-task idref="t38"/>
+    <child-task idref="t39"/>
+    <child-task idref="t45"/>
+    <child-task idref="t50"/>
+    <child-task idref="t73"/>
+    <prerequisite-task idref="t8"/>
+  </task>
+  <task id="t11">
+    <title>Relatórios</title>
+    <type>group</type>
+    <child-task idref="t25"/>
+    <child-task idref="t27"/>
+    <child-task idref="t28"/>
+  </task>
+  <task id="t12">
+    <title>Classes do Modelo</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t18"/>
+  </task>
+  <task id="t13">
+    <title>Mapeamento Hibernate</title>
+    <effort>7200</effort>
+    <effort-done>7200</effort-done>
+    <prerequisite-task idref="t12"/>
+  </task>
+  <task id="t14">
+    <title>Módulo 2 - Oficina</title>
+    <type>group</type>
+    <child-task idref="t65"/>
+    <child-task idref="t21"/>
+  </task>
+  <task id="t15">
+    <title>Módulo 3 - Portaria</title>
+    <type>group</type>
+    <child-task idref="t66"/>
+    <child-task idref="t23"/>
+  </task>
+  <task id="t17">
+    <title>Tabelas</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t4"/>
+  </task>
+  <task id="t18">
+    <title>Sequences</title>
+    <effort>14400</effort>
+    <effort-done>14400</effort-done>
+    <prerequisite-task idref="t17"/>
+  </task>
+  <task id="t21">
+    <title>Revisão</title>
+    <type>group</type>
+    <child-task idref="t55"/>
+    <child-task idref="t56"/>
+    <child-task idref="t57"/>
+    <child-task idref="t58"/>
+  </task>
+  <task id="t23">
+    <title>Registrar saída</title>
+    <type>group</type>
+    <child-task idref="t60"/>
+    <child-task idref="t61"/>
+    <child-task idref="t59"/>
+  </task>
+  <task id="t25">
+    <title>Saídas</title>
+    <type>group</type>
+    <child-task idref="t30"/>
+    <child-task idref="t31"/>
+    <child-task idref="t32"/>
+  </task>
+  <task id="t27">
+    <title>Revisões</title>
+    <type>group</type>
+    <child-task idref="t33"/>
+    <child-task idref="t34"/>
+    <child-task idref="t35"/>
+  </task>
+  <task id="t28">
+    <title>Veículos</title>
+    <type>group</type>
+    <child-task idref="t36"/>
+    <child-task idref="t37"/>
+  </task>
+  <task id="t30">
+    <title>Por dia</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t63"/>
+  </task>
+  <task id="t31">
+    <title>Por porteiro</title>
+    <effort>7200</effort>
+    <prerequisite-task idref="t30"/>
+  </task>
+  <task id="t32">
+    <title>Por veículo</title>
+    <effort>7200</effort>
+    <prerequisite-task idref="t31"/>
+  </task>
+  <task id="t33">
+    <title>Por dia</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t32"/>
+  </task>
+  <task id="t34">
+    <title>Por usuário</title>
+    <effort>7200</effort>
+    <prerequisite-task idref="t33"/>
+  </task>
+  <task id="t35">
+    <title>Por veículo</title>
+    <effort>7200</effort>
+    <prerequisite-task idref="t34"/>
+  </task>
+  <task id="t36">
+    <title>Saídas</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t35"/>
+  </task>
+  <task id="t37">
+    <title>Revisões</title>
+    <effort>7200</effort>
+    <prerequisite-task idref="t36"/>
+  </task>
+  <task id="t38">
+    <title>Login</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <start-constraint-date>2017-01-30T11:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2017-01-30T11:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t39">
+    <title>Usuário</title>
+    <type>group</type>
+    <child-task idref="t40"/>
+    <child-task idref="t42"/>
+    <child-task idref="t64"/>
+    <child-task idref="t44"/>
+  </task>
+  <task id="t40">
+    <title>Cadastro</title>
+    <effort>28800</effort>
+    <effort-done>28800</effort-done>
+    <prerequisite-task idref="t38"/>
+  </task>
+  <task id="t42">
+    <title>Alteração</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t40"/>
+  </task>
+  <task id="t44">
+    <title>Listar todos usuários</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t64"/>
+  </task>
+  <task id="t45">
+    <title>Veículo</title>
+    <type>group</type>
+    <child-task idref="t46"/>
+    <child-task idref="t47"/>
+    <child-task idref="t48"/>
+    <child-task idref="t49"/>
+  </task>
+  <task id="t46">
+    <title>Cadastro</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t44"/>
+  </task>
+  <task id="t47">
+    <title>Alteração</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t46"/>
+  </task>
+  <task id="t48">
+    <title>Exclusão</title>
+    <effort>7200</effort>
+    <prerequisite-task idref="t47"/>
+  </task>
+  <task id="t49">
+    <title>Listar todos veículos</title>
+    <effort>7200</effort>
+    <prerequisite-task idref="t48"/>
+  </task>
+  <task id="t50">
+    <title>Revisão</title>
+    <type>group</type>
+    <child-task idref="t51"/>
+    <child-task idref="t52"/>
+    <child-task idref="t53"/>
+    <child-task idref="t54"/>
+  </task>
+  <task id="t51">
+    <title>Cadastro</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t49"/>
+  </task>
+  <task id="t52">
+    <title>Alteração</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t51"/>
+  </task>
+  <task id="t53">
+    <title>Cancelamento</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t52"/>
+  </task>
+  <task id="t54">
+    <title>Listar todas revisões</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t53"/>
+  </task>
+  <task id="t55">
+    <title>Cadastro</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t65"/>
+  </task>
+  <task id="t56">
+    <title>Alteração</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t55"/>
+  </task>
+  <task id="t57">
+    <title>Listar revisões por usuário</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t56"/>
+  </task>
+  <task id="t58">
+    <title>Listar revisões por veículo</title>
+    <effort>3600</effort>
+    <prerequisite-task idref="t57"/>
+  </task>
+  <task id="t59">
+    <title>Registrar entrada</title>
+    <type>group</type>
+    <child-task idref="t62"/>
+    <child-task idref="t63"/>
+  </task>
+  <task id="t60">
+    <title>Recuperar dados do veículo pela placa</title>
+    <effort>7200</effort>
+    <prerequisite-task idref="t66"/>
+  </task>
+  <task id="t61">
+    <title>Gravar saída</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t60"/>
+  </task>
+  <task id="t62">
+    <title>Recuperar dados do veículo pela placa</title>
+    <effort>7200</effort>
+    <prerequisite-task idref="t61"/>
+  </task>
+  <task id="t63">
+    <title>Gravar entrada</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t62"/>
+  </task>
+  <task id="t64">
+    <title>Exclusão</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t42"/>
+  </task>
+  <task id="t65">
+    <title>Login</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t78"/>
+  </task>
+  <task id="t66">
+    <title>Login</title>
+    <effort>28800</effort>
+    <prerequisite-task idref="t58"/>
+  </task>
+  <task id="t73">
+    <title>Saída</title>
+    <type>group</type>
+    <child-task idref="t74"/>
+    <child-task idref="t75"/>
+    <child-task idref="t76"/>
+    <child-task idref="t77"/>
+    <child-task idref="t78"/>
+  </task>
+  <task id="t74">
+    <title>Alterar saída existente</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t54"/>
+  </task>
+  <task id="t75">
+    <title>Cancelar saída</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t74"/>
+  </task>
+  <task id="t76">
+    <title>Alterar entrada existente</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t75"/>
+  </task>
+  <task id="t77">
+    <title>Cancelar entrada</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t76"/>
+  </task>
+  <task id="t78">
+    <title>Listar todas saídas</title>
+    <effort>14400</effort>
+    <prerequisite-task idref="t77"/>
+  </task>
+  <critical-path root="-1" enabled="false" resources="false">
+    <color r="1" g="0.5" b="0.5"/>
+  </critical-path>
+</scenario>

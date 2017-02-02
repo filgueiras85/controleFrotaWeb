@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="controleFrota" match-schema="controlefrota"/>
+  <table-filter match-name="tb_usuario"/>
+  <table-filter match-name="tb_combustivel"/>
+  <table-filter match-name="tb_saida"/>
+  <table-filter match-name="tb_veiculo"/>
+  <table-filter match-name="tb_tipo_veiculo"/>
+  <table-filter match-name="tb_revisao"/>
+  <table-filter match-name="tb_funcao"/>
+</hibernate-reverse-engineering>

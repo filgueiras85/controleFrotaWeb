@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/01/2017 15:55:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="Modelo.Revisao" optimistic-lock="version" schema="controlefrota" table="tb_revisao">
+    <id name="idRevisao" type="int">
+      <column name="id_revisao"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="idVeiculo" type="int">
+      <column name="id_veiculo" not-null="true"/>
+    </property>
+    <property name="itensAVerificar" type="string">
+      <column name="itens_a_verificar"/>
+    </property>
+    <property name="itensVerificados" type="string">
+      <column name="itens_verificados"/>
+    </property>
+    <property name="trocasEfetuadas" type="string">
+      <column name="trocas_efetuadas"/>
+    </property>
+    <property name="problemasRemanescentes" type="string">
+      <column name="problemas_remanescentes"/>
+    </property>
+    <property name="idUsuario" type="java.lang.Integer">
+      <column name="id_usuario"/>
+    </property>
+    <property name="dataRealizacao" type="timestamp">
+      <column length="29" name="data_realizacao"/>
+    </property>
+    <property name="odometro" type="java.lang.Double">
+      <column name="odometro" precision="17" scale="17"/>
+    </property>
+    <property name="observacao" type="string">
+      <column name="observacao"/>
+    </property>
+    <property name="concluida" type="java.lang.Character">
+      <column length="1" name="concluida"/>
+    </property>
+  </class>
+</hibernate-mapping>

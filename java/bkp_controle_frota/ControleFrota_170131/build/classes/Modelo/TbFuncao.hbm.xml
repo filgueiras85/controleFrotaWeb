@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/01/2017 15:55:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Funcao" optimistic-lock="version" schema="controlefrota" table="tb_funcao">
+        <id name="idFuncao" type="int">
+            <column name="id_funcao"/>
+            <generator class="sequence">
+                <param name="sequence">controlefrota.seq_funcao</param>  
+            </generator>
+        </id>
+        <property name="txtFuncao" type="string">
+            <column name="txt_funcao"/>
+        </property>
+    </class>
+</hibernate-mapping>

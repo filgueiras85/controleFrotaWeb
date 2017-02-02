@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/01/2017 15:55:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Saida" optimistic-lock="version" schema="controlefrota" table="tb_saida">
+        <id name="idSaida" type="int">
+            <column name="id_saida"/>
+            <generator class="sequence">
+                <param name="sequence">controlefrota.seq_saida</param>  
+            </generator>
+        </id>
+        <property name="dataSaida" type="timestamp">
+            <column length="29" name="data_saida" not-null="true"/>
+        </property>
+        <property name="idVeiculo" type="int">
+            <column name="id_veiculo" not-null="true"/>
+        </property>
+        <property name="idUsuario" type="int">
+            <column name="id_usuario" not-null="true"/>
+        </property>
+        <property name="odometroSaida" type="double">
+            <column name="odometro_saida" not-null="true" precision="17" scale="17"/>
+        </property>
+        <property name="motorista" type="string">
+            <column name="motorista" not-null="true"/>
+        </property>
+        <property name="destino" type="string">
+            <column name="destino" not-null="true"/>
+        </property>
+        <property name="dataRetorno" type="timestamp">
+            <column length="29" name="data_retorno"/>
+        </property>
+        <property name="odometroRetorno" type="java.lang.Double">
+            <column name="odometro_retorno" precision="17" scale="17"/>
+        </property>
+        <property name="autorizacao" type="java.lang.Character">
+            <column length="1" name="autorizacao"/>
+        </property>
+    </class>
+</hibernate-mapping>
