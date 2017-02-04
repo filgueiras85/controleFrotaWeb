@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/01/2017 15:55:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.TipoVeiculo" optimistic-lock="version" schema="controlefrota" table="tb_tipo_veiculo">
+        <id name="idTipoVeiculo" type="int">
+            <column name="id_tipo_veiculo"/>
+            <generator class="sequence">
+                <param name="sequence">controlefrota.seq_tipo_veiculo</param>  
+            </generator>
+        </id>
+        <property name="finalidade" type="string">
+            <column name="finalidade"/>
+        </property>
+        <property name="txtTipo" type="string">
+            <column name="txt_tipo"/>
+        </property>
+    </class>
+</hibernate-mapping>

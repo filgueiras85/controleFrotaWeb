@@ -4,9 +4,9 @@
     Author     : ssdorneles
 --%>
 
-<%@page import="Modelo.Usuario"%>
+<%@page import="Model.Usuario"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="Modelo.Funcao"%>
+<%@page import="Model.Funcao"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Controller.FuncaoController" %>
@@ -41,7 +41,7 @@
                             <ul class="column">
                                 <li><a href="cadastrousuario">Cadastrar novo funcionário</a></li>
                                 <li><a href="alteracaousuario">Alterar funcionário existente</a></li>
-                                <li><a href="#">Excluir funcionário</a></li>
+                                <li><a href="exclusaousuario">Excluir funcionário</a></li>
                             </ul>
                             <ul class="column">
                                 <li><a href="#">Listar todos funcionários</a></li>

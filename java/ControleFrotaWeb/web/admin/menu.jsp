@@ -34,7 +34,7 @@
                             <ul class="column">
                                 <li><a href="cadastrousuario">Cadastrar novo funcionário</a></li>
                                 <li><a href="alteracaousuario">Alterar funcionário existente</a></li>
-                                <li><a href="#">Excluir funcionário</a></li>
+                                <li><a href="exclusaousuario">Excluir funcionário</a></li>
                             </ul>
                             <ul class="column">
                                 <li><a href="#">Listar todos funcionários</a></li>

@@ -1,7 +1,7 @@
 package Controller;
 
 import Dao.FuncaoDAO;
-import Modelo.Funcao;
+import Model.Funcao;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,5 +27,9 @@ public class FuncaoController {
 
     public int listaFuncaoId(String texto) {
         return new FuncaoDAO().recuperarFuncaoId(texto);
+    }
+    
+    public String listaFuncaoTxt(int id) {
+        return new FuncaoDAO().recuperarFuncaoTxt(id);
     }
 }

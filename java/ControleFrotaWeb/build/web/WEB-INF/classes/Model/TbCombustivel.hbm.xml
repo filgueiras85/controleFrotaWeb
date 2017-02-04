@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24/01/2017 15:55:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.Combustivel" optimistic-lock="version" schema="controlefrota" table="tb_combustivel">
+        <id name="idCombustivel" type="int">
+            <column name="id_combustivel"/>
+            <generator class="sequence">
+                <param name="sequence">controlefrota.seq_combustivel</param>  
+            </generator>
+        </id>
+        <property name="txtCombustivel" type="string">
+            <column name="txt_combustivel"/>
+        </property>
+    </class>
+</hibernate-mapping>

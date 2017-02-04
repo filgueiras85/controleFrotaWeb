@@ -3,9 +3,9 @@ package Controller;
 import Dao.RevisaoDAO;
 import Dao.UsuarioDAO;
 import Dao.VeiculoDAO;
-import Modelo.Revisao;
-import Modelo.Usuario;
-import Modelo.Veiculo;
+import Model.Revisao;
+import Model.Usuario;
+import Model.Veiculo;
 import java.util.List;
 
 /**

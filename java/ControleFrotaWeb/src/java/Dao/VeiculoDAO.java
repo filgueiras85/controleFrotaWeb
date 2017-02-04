@@ -1,6 +1,6 @@
 package Dao;
 
-import Modelo.Veiculo;
+import Model.Veiculo;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;

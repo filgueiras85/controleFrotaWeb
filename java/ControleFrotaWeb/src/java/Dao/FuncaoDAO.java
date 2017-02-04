@@ -5,7 +5,7 @@
  */
 package Dao;
 
-import Modelo.Funcao;
+import Model.Funcao;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -50,6 +50,20 @@ public class FuncaoDAO {
         } catch (HibernateException e) {
             System.out.println(e.getMessage());
             return 0;
+        }
+    }
+    
+    public String recuperarFuncaoTxt(int id) {
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            Transaction tx = session.beginTransaction();
+            Query q = session.createQuery("from Funcao f where f.idFuncao = " + id);
+            Funcao funcao = (Funcao) q.uniqueResult();
+            tx.commit();
+            return funcao.getTxtFuncao();
+        } catch (HibernateException e) {
+            System.out.println(e.getMessage());
+            return "Erro";
         }
     }
 }

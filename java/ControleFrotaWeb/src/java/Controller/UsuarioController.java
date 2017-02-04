@@ -1,7 +1,7 @@
 package Controller;
 
 import Dao.UsuarioDAO;
-import Modelo.Usuario;
+import Model.Usuario;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

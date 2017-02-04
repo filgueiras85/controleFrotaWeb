@@ -6,7 +6,7 @@
 package servlet;
 
 import Controller.UsuarioController;
-import Modelo.Usuario;
+import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;

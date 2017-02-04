@@ -28,6 +28,10 @@
         <servlet-name>ServletAlteracaoDadosUsuario</servlet-name>
         <servlet-class>servlet.ServletAlteracaoDadosUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletExclusaoUsuario</servlet-name>
+        <servlet-class>servlet.ServletExclusaoUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletLogin</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -43,6 +47,10 @@
     <servlet-mapping>
         <servlet-name>ServletAlteracaoDadosUsuario</servlet-name>
         <url-pattern>/admin/alteracaodadosusuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletExclusaoUsuario</servlet-name>
+        <url-pattern>/admin/exclusaousuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

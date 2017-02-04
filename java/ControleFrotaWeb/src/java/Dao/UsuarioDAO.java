@@ -1,6 +1,6 @@
 package Dao;
 
-import Modelo.Usuario;
+import Model.Usuario;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
