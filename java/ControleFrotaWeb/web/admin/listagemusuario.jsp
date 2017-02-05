@@ -161,8 +161,7 @@
                 </c:when>
                 <c:when test="${'Todos' == tipoRel}">
                     <%
-                        UsuarioController usuarioController = new UsuarioController();
-                        List usuarios = usuarioController.listaTodosUsuarios();
+                        List usuarios = new UsuarioController().listaTodosUsuarios();
                         pageContext.setAttribute("usuarios", usuarios);
                     %>
                     <c:forEach items="${usuarios}" var="item">
@@ -170,8 +169,7 @@
                         <%
                             String strIdFuncao = pageContext.getAttribute("id").toString();
                             int nrFuncao = Integer.parseInt(strIdFuncao);
-                            FuncaoController funcaoController = new FuncaoController();
-                            String strFuncao = funcaoController.listaFuncaoTxt(nrFuncao);
+                            String strFuncao = new FuncaoController().listaFuncaoTxt(nrFuncao);
                             pageContext.setAttribute("strFuncao", strFuncao);
                         %>
                         <tr>
@@ -190,10 +188,58 @@
 
                 </c:when>
                 <c:when test="${'Ativos' == tipoRel}">
-
+                    <%
+                        List usuariosAtivos = new UsuarioController().listaTodosUsuariosAtivos();
+                        pageContext.setAttribute("usuariosAtivos", usuariosAtivos);
+                    %>
+                    <c:forEach items="${usuariosAtivos}" var="item">
+                        <c:set var="id" value="${item.getIdFuncao()}"/>
+                        <%
+                            String strIdFuncao2 = pageContext.getAttribute("id").toString();
+                            int nrFuncao2 = Integer.parseInt(strIdFuncao2);
+                            String strFuncao2 = new FuncaoController().listaFuncaoTxt(nrFuncao2);
+                            pageContext.setAttribute("strFuncao2", strFuncao2);
+                        %>
+                        <tr>
+                            <td align="center"><c:out value="${item.getNome()}" /></td>
+                            <td align="center"><c:out value="${item.getSobrenome()}" /></td>
+                            <td align="center"><c:out value="${strFuncao2}" /></td>
+                            <td align="center"><c:out value="${item.getEmail()}" /></td>
+                            <td align="center"><c:out value="${item.getUsuario()}" /></td>
+                            <td align="center"><c:out value="${item.getDataNascimento()}" /></td>
+                            <td align="center"><c:out value="${item.getDataAdmisssao()}" /></td>
+                            <td align="center"><c:out value="${item.getDataDemissao()}" /></td>
+                            <td align="center"><c:out value="${item.getObservacao()}" /></td>
+                            <td align="center"><c:out value="${item.getTelefone()}" /></td>
+                        </tr>
+                    </c:forEach>
                 </c:when>
                 <c:when test="${'Inativos' == tipoRel}">
-
+                    <%
+                        List usuariosInativos = new UsuarioController().listaTodosUsuariosInativos();
+                        pageContext.setAttribute("usuariosInativos", usuariosInativos);
+                    %>
+                    <c:forEach items="${usuariosInativos}" var="item">
+                        <c:set var="id" value="${item.getIdFuncao()}"/>
+                        <%
+                            String strIdFuncao3 = pageContext.getAttribute("id").toString();
+                            int nrFuncao3 = Integer.parseInt(strIdFuncao3);
+                            String strFuncao3 = new FuncaoController().listaFuncaoTxt(nrFuncao3);
+                            pageContext.setAttribute("strFuncao3", strFuncao3);
+                        %>
+                        <tr>
+                            <td align="center"><c:out value="${item.getNome()}" /></td>
+                            <td align="center"><c:out value="${item.getSobrenome()}" /></td>
+                            <td align="center"><c:out value="${strFuncao3}" /></td>
+                            <td align="center"><c:out value="${item.getEmail()}" /></td>
+                            <td align="center"><c:out value="${item.getUsuario()}" /></td>
+                            <td align="center"><c:out value="${item.getDataNascimento()}" /></td>
+                            <td align="center"><c:out value="${item.getDataAdmisssao()}" /></td>
+                            <td align="center"><c:out value="${item.getDataDemissao()}" /></td>
+                            <td align="center"><c:out value="${item.getObservacao()}" /></td>
+                            <td align="center"><c:out value="${item.getTelefone()}" /></td>
+                        </tr>
+                    </c:forEach>
                 </c:when>
                 <c:otherwise>
 

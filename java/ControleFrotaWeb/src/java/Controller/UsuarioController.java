@@ -38,6 +38,12 @@ public class UsuarioController {
         List usuarios = usuarioDAO.recuperarTodosUsuariosAtivos();
         return usuarios;
     }
+    
+    public List listaTodosUsuariosInativos() {
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        List usuarios = usuarioDAO.recuperarTodosUsuariosInativos();
+        return usuarios;
+    }
 
     public String salvaUsuario(String nome, String sobrenome, String funcao,
             String telefone, String email, String username,

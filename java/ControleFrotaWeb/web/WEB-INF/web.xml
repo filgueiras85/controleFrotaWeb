@@ -32,6 +32,22 @@
         <servlet-name>ServletExclusaoUsuario</servlet-name>
         <servlet-class>servlet.ServletExclusaoUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletCadastroVeiculo</servlet-name>
+        <servlet-class>servlet.ServletCadastroVeiculo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletAlteracaoVeiculo</servlet-name>
+        <servlet-class>servlet.ServletAlteracaoVeiculo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletAlteracaoDadosVeiculo</servlet-name>
+        <servlet-class>servlet.ServletAlteracaoDadosVeiculo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletExclusaoVeiculo</servlet-name>
+        <servlet-class>servlet.ServletExclusaoVeiculo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletLogin</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -51,6 +67,22 @@
     <servlet-mapping>
         <servlet-name>ServletExclusaoUsuario</servlet-name>
         <url-pattern>/admin/exclusaousuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletCadastroVeiculo</servlet-name>
+        <url-pattern>/admin/cadastroveiculo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAlteracaoVeiculo</servlet-name>
+        <url-pattern>/admin/alteracaoveiculo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAlteracaoDadosVeiculo</servlet-name>
+        <url-pattern>/admin/alteracaodadosveiculo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletExclusaoVeiculo</servlet-name>
+        <url-pattern>/admin/exclusaoveiculo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

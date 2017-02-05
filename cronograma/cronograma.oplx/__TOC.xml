@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <omniplan xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" xmlns:opnx="http://www.omnigroup.com/namespace/OmniPlan/v2">
-  <window x="0" y="0" w="1920" h="1157">
+  <window x="0" y="4" w="1920" h="1173">
     <editing-scenario>bhCmQ2ikGAd</editing-scenario>
     <view>task</view>
     <change-tracking/>
     <status-display>basic</status-display>
     <task-view>
       <split-view-divider-position>306</split-view-divider-position>
-      <outline x="0" y="0" w="306" h="1119">
+      <outline x="0" y="0" w="306" h="1075">
         <column name="Violations" width="20"/>
         <column name="Notes" width="20"/>
         <column name="Title" width="191"/>
         <column name="Effort" width="70"/>
-        <expanded-items idrefs="t50 t27 t11 t25 t73 t14 t39 t45 t23 t59 t28 t2 t7 t21 t10 t15"/>
-        <selected-items-at-filter-time idrefs="t73 t66 t59 t31 t17 t74 t32 t18 t25 t75 t40 t33 t76 t34 t27 t77 t35 t42 t28 t2 t78 t50 t36 t3 t79 t44 t51 t4 t37 t45 t38 t52 t10 t7 t60 t46 t8 t11 t39 t53 t61 t12 t47 t54 t55 t13 t48 t62 t49 t63 t14 t21 t56 t57 t15 t64 t72 t30 t23 t58 t65"/>
+        <expanded-items idrefs="t50 t27 t11 t25 t14 t73 t39 t28 t45 t59 t2 t23 t7 t15 t10 t21"/>
+        <selected-items-at-filter-time idrefs="t59 t17 t31 t73 t66 t74 t32 t18 t25 t75 t33 t40 t76 t34 t27 t77 t42 t28 t35 t2 t78 t50 t36 t3 t4 t37 t44 t51 t52 t10 t45 t38 t7 t53 t11 t60 t46 t8 t39 t54 t12 t61 t47 t48 t62 t55 t13 t49 t14 t63 t21 t56 t57 t64 t15 t58 t30 t23 t65"/>
       </outline>
-      <gantt-view x="-54" y="0" w="1282" h="1119">
+      <gantt-view x="370" y="0" w="1282" h="1075">
         <view-mode>actual</view-mode>
         <dependency-lines/>
         <constraints/>

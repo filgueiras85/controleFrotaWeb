@@ -179,7 +179,7 @@
                     </tr>
                     <tr>
                         <td><input maxlength="100" size="62" type="password" id="confirmasenha" name="confirmasenha" pattern="" title="Senhas devem ser iguais"></td>
-                        </td>
+                        
                     </tr>
                 </tbody>
             </table>
@@ -193,7 +193,7 @@
                         <td>Telefone</td>
                     </tr>
                     <tr>
-                        <td><input maxlength="10" name="datanascimento" required="required" size="20" type="date"/></td>
+                        <td><input name="datanascimento" required="required" size="20" type="date"/></td>
                         <td><input maxlength="200" name="telefone" size="34" type="tel" value="<%=usuario.getTelefone()%>"/></td>
                     </tr>
                 </tbody>

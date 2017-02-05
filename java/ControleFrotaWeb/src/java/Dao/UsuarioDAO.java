@@ -122,4 +122,23 @@ public class UsuarioDAO {
         }
     }
 
+    public List recuperarTodosUsuariosInativos() {
+        try {
+            List usuarios = new ArrayList<>();
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            Transaction tx = session.beginTransaction();
+            Query q = session.createQuery("from Usuario u where u.dataDemissao is not null");
+            Iterator iter = q.iterate();
+            while (iter.hasNext()) {
+                Usuario usuario = (Usuario) iter.next();
+                usuarios.add(usuario);
+            }
+            tx.commit();
+            return usuarios;
+        } catch (HibernateException e) {
+            e.getMessage();
+            return null;
+        }
+    }
+
 }

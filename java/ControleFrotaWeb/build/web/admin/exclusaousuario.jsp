@@ -154,7 +154,7 @@
 
 
 
-            <p style="text-align:center"><input type="submit" value="Exclui funcionário" /></p>
+            <p style="text-align:center"><input type="submit" value="Excluir Usuário" /></p>
         </form>
     </body>
 </html>

@@ -19,13 +19,6 @@
         <title>Controle de Frotas</title>
         <link href="util/ddmenu/ddmenu.css" rel="stylesheet" type="text/css"/>
         <script src="util/ddmenu/ddmenu.js" type="text/javascript"></script>
-        <script language='javascript' type='text/javascript'>
-            function carregaDados(input) {
-
-                document.getElementsById('nomex').value = 'abc';
-
-            }
-        </script>
     </head>
     <body>
         <h1 style="text-align:center">Controle de Frotas</h1>

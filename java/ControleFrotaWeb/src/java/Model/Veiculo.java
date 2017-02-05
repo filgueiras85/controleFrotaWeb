@@ -40,6 +40,7 @@ public class Veiculo  implements java.io.Serializable {
         this.idTipoVeiculo = idTipoVeiculo;
         this.placa = placa;
     }
+    
     public Veiculo(int idVeiculo, int idTipoVeiculo, String placa, String chassi, Integer anoFabricacao, Integer anoModelo, Date dataAquisicao, Date dataExclusao, Integer capacidadePessoas, Double cilindradas, Double capacidadeCarga, String fabricante, String modelo, String cor, String renavam, Integer idCombustivel, Integer portas, Double odometroAtual, Character bloqueado, String observacao) {
        this.idVeiculo = idVeiculo;
        this.idTipoVeiculo = idTipoVeiculo;
@@ -49,6 +50,27 @@ public class Veiculo  implements java.io.Serializable {
        this.anoModelo = anoModelo;
        this.dataAquisicao = dataAquisicao;
        this.dataExclusao = dataExclusao;
+       this.capacidadePessoas = capacidadePessoas;
+       this.cilindradas = cilindradas;
+       this.capacidadeCarga = capacidadeCarga;
+       this.fabricante = fabricante;
+       this.modelo = modelo;
+       this.cor = cor;
+       this.renavam = renavam;
+       this.idCombustivel = idCombustivel;
+       this.portas = portas;
+       this.odometroAtual = odometroAtual;
+       this.bloqueado = bloqueado;
+       this.observacao = observacao;
+    }
+    
+    public Veiculo(int idTipoVeiculo, String placa, String chassi, Integer anoFabricacao, Integer anoModelo, Date dataAquisicao, Integer capacidadePessoas, Double cilindradas, Double capacidadeCarga, String fabricante, String modelo, String cor, String renavam, Integer idCombustivel, Integer portas, Double odometroAtual, Character bloqueado, String observacao) {
+       this.idTipoVeiculo = idTipoVeiculo;
+       this.placa = placa;
+       this.chassi = chassi;
+       this.anoFabricacao = anoFabricacao;
+       this.anoModelo = anoModelo;
+       this.dataAquisicao = dataAquisicao;
        this.capacidadePessoas = capacidadePessoas;
        this.cilindradas = cilindradas;
        this.capacidadeCarga = capacidadeCarga;

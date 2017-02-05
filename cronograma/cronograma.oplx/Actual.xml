@@ -123,9 +123,6 @@
     <type>group</type>
     <child-task idref="t17"/>
     <child-task idref="t18"/>
-    <style>
-      <value key="font-italic">yes</value>
-    </style>
   </task>
   <task id="t8">
     <title>Classes de Controle e DAO</title>
@@ -285,11 +282,13 @@
   <task id="t42">
     <title>Alteração</title>
     <effort>28800</effort>
+    <effort-done>28800</effort-done>
     <prerequisite-task idref="t40"/>
   </task>
   <task id="t44">
     <title>Listar todos usuários</title>
     <effort>28800</effort>
+    <effort-done>28800</effort-done>
     <prerequisite-task idref="t64"/>
   </task>
   <task id="t45">
@@ -303,21 +302,25 @@
   <task id="t46">
     <title>Cadastro</title>
     <effort>14400</effort>
+    <effort-done>14400</effort-done>
     <prerequisite-task idref="t44"/>
   </task>
   <task id="t47">
     <title>Alteração</title>
     <effort>14400</effort>
+    <effort-done>14400</effort-done>
     <prerequisite-task idref="t46"/>
   </task>
   <task id="t48">
     <title>Exclusão</title>
     <effort>7200</effort>
+    <effort-done>7200</effort-done>
     <prerequisite-task idref="t47"/>
   </task>
   <task id="t49">
     <title>Listar todos veículos</title>
     <effort>7200</effort>
+    <effort-done>7200</effort-done>
     <prerequisite-task idref="t48"/>
   </task>
   <task id="t50">
@@ -397,6 +400,7 @@
   <task id="t64">
     <title>Exclusão</title>
     <effort>14400</effort>
+    <effort-done>14400</effort-done>
     <prerequisite-task idref="t42"/>
   </task>
   <task id="t65">
